@@ -23,18 +23,31 @@ function generatePassword() {
 
   if (lowInp) {
     totalList = totalList.concat(lowercase);
+    var selectLowercase = Math.floor(Math.random()*lowercase.length);
+    var randomLowercase = lowercase[selectLowercase];
+    }
   }
   if (upInp) {
     totalList = totalList.concat(uppercase);
+    var selectUppercase = Math.floor(Math.random()*uppercase.length);
+    var randomUppercase = uppercase[selectUppercase];
   }
   if (numInp) {
     totalList = totalList.concat(numbers);
+    var selectNumber = Math.floor(Math.random()*numbers.length);
+    var randomNumber = numbers[selectNumber];
   }
   if (charInp) {
     totalList = totalList.concat(speChar);
+    var selectSpeChar = Math.floor(Math.random()*speChar.length);
+    var randomSpeChar = speChar[selectSpeChar];
   }
 
 console.log(totalList);
+console.log(randomLowercase);
+console.log(randomUppercase);
+console.log(randomNumber);
+console.log(randomSpeChar);
 
 function shuffle(array) {
   let index = totalList.length,  randomIndex;
@@ -53,21 +66,14 @@ function shuffle(array) {
   return totalList;
 }
 
-shuffle(totalList);
+  shuffle(totalList);
+  console.log(totalList);
 
+   return randomLowercase + randomUppercase + randomNumber + randomSpeChar + totalList.slice(0, lengInp);
 
-console.log(totalList);
-  // for (let i = 0; i < totalList.length; i++) {
-  //    finalList = Math.floor(Math.random() * totalList.length -1);
-  // }
-
-  // console.log(finalList);
 
   }
 
-
-
-}
 
 // Write password to the #password input
 function writePassword() {
@@ -82,33 +88,3 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-// GIVEN I need a new, secure password
-// WHEN I click the button to generate a password
-// THEN I am presented with a series of prompts for password criteria
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
-// WHEN prompted for the length of the password
-// THEN I choose a length of at least 8 characters and no more than 128 characters
-
-
-// WHEN asked for character types to include in the password
-// THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-// confirm("Do you want to inclue lowercase letters?");
-// // if (confirm) {
-// //   USE LOWERCASE VAR
-// // }
-
-// confirm("Do you want to include UPPERCASE LETTERS?")
-// // if ()
-// confirm(numeric values)
-// confirm(special characters)
-// // WHEN I answer each prompt
-// // THEN my input should be validated and at least one character type should be selected
-// 
-// var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-// var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-// var speChar = ["!", "@", "#", "$", "%", "&"];
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
-
-// math.random is applied to all selected variable arrays to pull the selected number of characters randomly
