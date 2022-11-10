@@ -6,6 +6,7 @@ function generatePassword() {
   var lengInp = Number(charLenInput);
   console.log(lengInp);
   var totalList = [];
+  var finalList = [];
   var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
@@ -33,8 +34,34 @@ function generatePassword() {
     totalList = totalList.concat(speChar);
   }
 
-  console.log(totalList);
+console.log(totalList);
 
+function shuffle(array) {
+  let index = totalList.length,  randomIndex;
+
+
+  while (index != 0) {
+
+
+    randomIndex = Math.floor(Math.random() * index);
+    index--;
+
+    [totalList[index], totalList[randomIndex]] = [
+      totalList[randomIndex], totalList[index]];
+  }
+
+  return totalList;
+}
+
+shuffle(totalList);
+
+
+console.log(totalList);
+  // for (let i = 0; i < totalList.length; i++) {
+  //    finalList = Math.floor(Math.random() * totalList.length -1);
+  // }
+
+  // console.log(finalList);
 
   }
 
