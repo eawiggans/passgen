@@ -16,12 +16,26 @@ function generatePassword() {
   }
   else {
   var lowInp = confirm("Would you like to use lowercase letters?");
-  var lowInp = confirm("Would you like to use uppercase letters?");
+  var upInp = confirm("Would you like to use uppercase letters?");
   var numInp = confirm("Would you like to use numbers?");
   var charInp = confirm("Would you like to use special characters?");
 
+  if (lowInp) {
+    totalList = totalList.concat(lowercase);
+  }
+  if (upInp) {
+    totalList = totalList.concat(uppercase);
+  }
+  if (numInp) {
+    totalList = totalList.concat(numbers);
+  }
+  if (charInp) {
+    totalList = totalList.concat(speChar);
+  }
 
-  
+  console.log(totalList);
+
+
   }
 
 
