@@ -5,40 +5,23 @@ function generatePassword() {
   var charLenInput = prompt("Choose your character length (between 8 and 128)");
   var lengInp = Number(charLenInput);
   console.log(lengInp);
+  var totalList = [];
+  var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+  var speChar = ["!", "@", "#", "$", "%", "&"];
+
   if (lengInp < 8 || lengInp > 129) {
-    alert("Please choose a number from 8-128");
-    return;
+    prompt("Please choose a number from 8-128");
   }
   else {
-
-  }
   var lowInp = confirm("Would you like to use lowercase letters?");
-    if (lowInp) {
-      var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    }
-    else {
-
-    }
   var lowInp = confirm("Would you like to use uppercase letters?");
-    if (lowInp) {
-      var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-    }
-    else {
-
-    }
   var numInp = confirm("Would you like to use numbers?");
-  if (numInp) {
-    var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-  }
-  else {
-
-  }
   var charInp = confirm("Would you like to use special characters?");
-  if (charInp) {
-    var speChar = ["!", "@", "#", "$", "%", "&"];
-  }
-  else {
 
+
+  
   }
 
 
